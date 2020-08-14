@@ -1,0 +1,102 @@
+.container {
+    display: grid;
+    grid-gap: 0px;
+    /* grid-template-rows: 80px 10px 10px 30px; */
+    grid-template-rows: 8fr 1fr 1fr 3fr;
+    grid-template-columns: 13fr 2fr 1fr 5fr;
+    height: 600px;
+    width: 1000px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 200px;
+}
+
+.break {
+    text-decoration: underline
+}
+
+#def {
+    padding: 20px;
+    border-style: solid;
+    background-color: lightskyblue;
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    z-index: 1000
+}
+
+.text-center {
+    text-align: center;
+}
+
+h1 {
+    text-align: right;
+}
+
+div.item {
+    position: relative;
+    color: #000;
+    padding: 20px;
+}
+
+div.item:hover {
+    cursor: hand;
+    cursor: pointer;
+    opacity: .9;
+}
+
+a.divLink {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+    /* Makes sure the link doesn't get underlined */
+    z-index: 10;
+    /* raises anchor tag above everything else in div */
+    background-color: white;
+    /*workaround to make clickable in IE */
+    /*workaround to make clickable in IE */
+    filter: alpha(opacity=0);
+    /*workaround to make clickable in IE */
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.item {
+    background-color: #ddd;
+    border: 1px solid #ccc;
+}
+
+.box13 {
+    grid-row: 1 / 5;
+}
+
+.box8 {
+    grid-column: 2 / 5;
+}
+
+.box5 {
+    grid-row: 2 / 5;
+    grid-column: 4 / 5;
+}
+
+.box3 {
+    grid-row: 4 / 5;
+    grid-column: 2 / 4;
+}
+
+.box2 {
+    grid-row: 2 / 4;
+    grid-column: 2 / 3;
+}
