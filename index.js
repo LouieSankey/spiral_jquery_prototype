@@ -5,18 +5,16 @@ let durations = {
   13: 3,
   8: 2,
   5: 1,
-  2:1
+  3: 0.5
+
 }
-
-
-
 
 let onBreak = false;
 let breakDuration = 0;
 let isPastBreak = false;
 
 
-var timeleft = 20;
+var timeleft = 55 * 60;
 
 function timer() {
 var downloadTimer = setInterval(function(){
