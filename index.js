@@ -9,6 +9,8 @@ let durations = {
 }
 
 
+
+
 let onBreak = false;
 let breakDuration = 0;
 let isPastBreak = false;

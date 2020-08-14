@@ -1,7 +1,6 @@
 .container {
     display: grid;
     grid-gap: 0px;
-    /* grid-template-rows: 80px 10px 10px 30px; */
     grid-template-rows: 8fr 1fr 1fr 3fr;
     grid-template-columns: 13fr 2fr 1fr 5fr;
     height: 600px;
@@ -56,7 +55,6 @@ a.divLink {
     top: 0;
     left: 0;
     text-decoration: none;
-    /* Makes sure the link doesn't get underlined */
     z-index: 10;
     /* raises anchor tag above everything else in div */
     background-color: white;
