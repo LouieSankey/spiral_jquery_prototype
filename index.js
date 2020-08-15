@@ -22,8 +22,6 @@ var downloadTimer = setInterval(function(){
   if(timeleft <= 0 && timeleft > -1){
     clearInterval(downloadTimer);
 
-   
-
     if(onBreak){
       isPastBreak = true;
       var bark = new Audio("dog_bark.wav"); 
