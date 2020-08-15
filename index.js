@@ -28,8 +28,7 @@ var downloadTimer = setInterval(function(){
       bark.play();
 
       document.getElementById("timer").innerHTML = "Finished";
-      timeleft = 30
-      timer()
+
 
 
     }else{
