@@ -8,10 +8,12 @@ p {
 }
 
 #footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     font-size: 30px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .container {
@@ -21,13 +23,13 @@ p {
     grid-template-columns: 13fr 2fr 1fr 5fr;
     height: 500px;
     width: 800px;
-    position: absolute;
+    position: relative;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
-    margin-top: 240px;
+    margin-top: 40px;
     margin-bottom: 100px;
 }
 
@@ -39,12 +41,26 @@ p {
     text-decoration: underline
 }
 
+.break2 {
+    text-decoration: underline
+}
+
 #def {
     padding: 20px;
     border-style: solid;
     background-color: lightskyblue;
     position: absolute;
     top: 20%;
+    right: 5%;
+    z-index: 1000
+}
+
+#def2 {
+    padding: 20px;
+    border-style: solid;
+    background-color: lightskyblue;
+    position: absolute;
+    top: 50%;
     right: 5%;
     z-index: 1000
 }

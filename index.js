@@ -14,11 +14,12 @@ let breakDuration = 0;
 let isPastBreak = false;
 
 
-var timeleft = 55 * 60;
+var timeleft = 60 * 10000;
 
 function timer() {
 var downloadTimer = setInterval(function(){
-  if(timeleft <= 0){
+
+  if(timeleft <= 0 && timeleft > -1){
     clearInterval(downloadTimer);
 
    
@@ -45,7 +46,9 @@ var downloadTimer = setInterval(function(){
 
   } else {
 
-    if(isPastBreak){
+    if(timeleft > 60 * 100){
+      document.getElementById("timer").innerHTML = "Select a Duration";
+    } else if(isPastBreak){
       document.getElementById("timer").innerHTML = "Finished";
      
     }else{
@@ -106,11 +109,26 @@ $(".container").on('click', '.item', function(elem) {
 
 $("#def").hide();
 
-$('.break')
-
-    .on("mouseenter", function () {
+$('.break').on("mouseenter", function () {
         $("#def").show();            
     })
     .on("mouseleave", function () {
         $("#def").hide();
     });
+
+   $("#def2").hide();
+
+$('.break2').on("mouseenter", function () {
+        $("#def2").show();            
+    })
+    .on("mouseleave", function () {
+        $("#def2").hide();
+    });
+
+    $('#def2').on("mouseenter", function () {
+      $("#def2").show();            
+  })
+  .on("mouseleave", function () {
+      $("#def2").hide();
+  });
+
