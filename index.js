@@ -5,7 +5,7 @@ let durations = {
   13: 3,
   8: 2,
   5: 1,
-  3: 0.5
+  1: 0.5
 
 }
 
@@ -19,7 +19,7 @@ var timeleft = 60 * 10000;
 function timer() {
 var downloadTimer = setInterval(function(){
 
-  if(timeleft <= 0 && timeleft > -1){
+  if(timeleft < 0 && timeleft > -10){
     clearInterval(downloadTimer);
 
     if(onBreak){
@@ -28,7 +28,7 @@ var downloadTimer = setInterval(function(){
       bark.play();
 
       document.getElementById("timer").innerHTML = "Finished";
-
+     
 
 
     }else{
