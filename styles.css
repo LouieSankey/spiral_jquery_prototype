@@ -48,7 +48,7 @@ p {
 #def {
     padding: 20px;
     border-style: solid;
-    background-color: lightskyblue;
+    background-color: cornsilk;
     position: absolute;
     top: 20%;
     right: 5%;
@@ -57,11 +57,8 @@ p {
 
 #def2 {
     padding: 20px;
-    border-style: solid;
-    background-color: lightskyblue;
     position: absolute;
     top: 50%;
-    right: 5%;
     z-index: 1000
 }
 
