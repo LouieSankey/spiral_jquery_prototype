@@ -1,4 +1,5 @@
 body {
+    background-size: cover;
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
@@ -34,10 +35,6 @@ p {
     margin-bottom: 100px;
 }
 
-#subheading {
-    color: lightslategray;
-}
-
 .break {
     text-decoration: underline
 }
@@ -49,7 +46,6 @@ p {
 #def {
     padding: 20px;
     border-style: solid;
-    background-color: lightsteelblue;
     position: absolute;
     top: 20%;
     right: 5%;
@@ -92,7 +88,9 @@ a.divLink {
     text-decoration: none;
     z-index: 10;
     /* raises anchor tag above everything else in div */
-    background-color: white;
+    background-color: aliceblue;
+    background-size: cover;
+    opacity: 6;
     /*workaround to make clickable in IE */
     /*workaround to make clickable in IE */
     filter: alpha(opacity=0);
