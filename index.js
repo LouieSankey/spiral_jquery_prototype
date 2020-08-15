@@ -19,7 +19,7 @@ var timeleft = 60 * 10000;
 function timer() {
 var downloadTimer = setInterval(function(){
 
-  if(timeleft < 0 && timeleft > -10){
+  if(timeleft < 0 && timeleft > -2000){
     clearInterval(downloadTimer);
 
     if(onBreak){
