@@ -13,6 +13,8 @@ let onBreak = false;
 let breakDuration = 0;
 let isPastBreak = false;
 
+document.getElementById("timer").innerHTML = "Select a Duration"
+
 
 var timeleft = 60 * 10000;
 
@@ -27,13 +29,13 @@ var downloadTimer = setInterval(function(){
       var bark = new Audio("dog_bark.wav"); 
       bark.play();
 
-      document.getElementById("timer").innerHTML = "Finished";
+      document.getElementById("timer").innerHTML = "Select a Duration";
      
 
 
     }else{
-      var ping = new Audio("ping.wav"); 
-      ping.play();
+      var bling = new Audio("endbell.mp3"); 
+      bling.play();
       timeleft = breakDuration
       onBreak = true;
       timer()
@@ -85,12 +87,16 @@ function fancyTimeFormat(duration)
 
 $(".container").on('click', '.item', function(elem) {
 
+  var gong = new Audio("opening_gong.wav"); 
+  gong.play();
+
   let timeSelected = parseInt($(this).text())
   onBreak = false;
   isPastBreak = false;
 
   breakDuration = durations[timeSelected] * 60;
 
+ 
 
   if(timeleft > 0){
     timeleft = timeSelected * 60;
