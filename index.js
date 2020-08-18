@@ -16,7 +16,7 @@ let isPastBreak = false;
 document.getElementById("timer").innerHTML = "Select a Duration"
 
 //a hack to wake up the sound audio on the browser 
-var silence = new Audio("silence"); 
+var silence = new Audio("silence.wav"); 
 silence.play();
 
 
