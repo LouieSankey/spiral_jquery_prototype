@@ -1,4 +1,3 @@
-
 let durations = {
   55: 8,
   21: 5,
@@ -9,19 +8,7 @@ let durations = {
 
 }
 
-var sessionUsage;
-
-var usageFromStorage = localStorage.getItem('session');
-
-if(!usageFromStorage){
-  sessionUsage = [];
-}else{
-  sessionUsage = JSON.parse(usageFromStorage);
-}
-
-
-console.log(sessionUsage)
-
+let sessionUsage = [];
 
 let onBreak = false;
 let breakDuration = 0;
@@ -30,18 +17,14 @@ let isPastBreak = false;
 document.getElementById("timer").innerHTML = "Select a Duration"
 
 //a hack to wake up the sound audio on the browser 
-// var silence = new Audio("silence.wav");
-// silence.play();
+var silence = new Audio("silence.wav");
+silence.play();
 
 var timeleft = 60 * 10000;
 
-var downloadTimer = null;
-
 
 function timer() {
-//if(!pause){
-
-downloadTimer = setInterval(function(){
+var downloadTimer = setInterval(function(){
   if(!pause){
   if(timeleft < 0 && timeleft > -2000){
     clearInterval(downloadTimer);
@@ -67,25 +50,22 @@ downloadTimer = setInterval(function(){
       document.getElementById("timer").innerHTML = "Select a Duration";
     } else if(isPastBreak){
       document.getElementById("timer").innerHTML = "Finished";
-      $('.toolbar').css('visibility','hidden');
-      $('.stop').css('visibility','hidden');
-      $('.skip_next').css('visibility','hidden');
      
     }else{
       let periodIndicator = onBreak ? "On Break: " : "Remaining: "
-      $('.toolbar').css('visibility','visible');
       document.getElementById("timer").innerHTML = periodIndicator + fancyTimeFormat(timeleft);
     }
     
 
   }
+
   timeleft -= 1;
-}
+  }
 }, 1000);
 
 }
 
-//}
+
 
 timer()
 
@@ -112,56 +92,38 @@ function fancyTimeFormat(duration)
 
 let pause = false;
 
-$(".toolbar").on('click', '.stop', function(elem){
+let lastPlayedDuration = null;
+let lastPlayedContext = null;
+let lastKey = null;
 
-stop()
-
-})
-
-function stop(){
-  clearInterval(downloadTimer);
-  $('.stop').css('visibility','hidden');
-  $('.skip_next').css('visibility','hidden');
-
-  $('.toolbar').css('visibility','hidden');
-  $('.pause').text('pause_presentation')
-document.getElementById("timer").innerHTML = "Select a Duration";
-pause = false;
-breakDuration = 0;
-timeleft = 60 + 100000
-timer()
-}
-
-
-$(".toolbar").on('click', '.pause', function(elem){
-  if(pause){
-    pause = false
-    $('.pause').text('pause_presentation')
-    $('.stop').css('visibility','hidden');
-    $('.skip_next').css('visibility','hidden');
-  }else{
-    pause = true
-    $('.pause').text('play_circle_outline')
-
-    $('.stop').css('visibility','visible');
-    $('.skip_next').css('visibility','visible');
-  }
-})
 
 $(".container").on('click', '.item', function(elem) {
-console.log(pause)
-console.log(breakDuration)
-console.log(timeleft)
-console.log(onBreak)
 
-stop()
+  let key = $(this).text()
 
+if(lastKey === "pause" || lastKey === "play_arrow" && key !== lastPlayedDuration){
+  $(lastPlayedContext).text(lastPlayedDuration)
+}
+
+lastKey = "pause"
+
+//here we know we need to pause
+  if(durations.hasOwnProperty(key) && !pause 
+  || (key !== lastPlayedDuration && key !== "pause" && key !== "play_arrow")
+  || pause && key !== lastPlayedDuration && key !== "play_arrow"){
+   //proceed as normal, pause should still be false
+   //here is where we change to pause image. 
+
+   if(pause && key !== lastPlayedDuration){
+     pause = false;
+   }
 
 
   var gong = new Audio("opening_gong.wav"); 
   gong.play();
 
   let timeSelected = parseInt($(this).text())
+  lastPlayedDuration = timeSelected;
   onBreak = false;
   isPastBreak = false;
 
@@ -170,13 +132,7 @@ stop()
 
   let task = $('#fname').val();
 
-  let date = new Date()
-
-  var d = new Date(); 
-  var _date = d.toLocaleDateString();
-  var time = d.toLocaleTimeString();
-
-
+  let date = new Date().toLocaleString();
 
   if(timeleft > 0){
     timeleft = timeSelected * 60;
@@ -187,19 +143,49 @@ stop()
 
   let cycle = {
     "task": task,
-    "date": _date,
-    "start time": time,
-    "end time": "n/a",
-    "skipped": "n/a",
-    "cycle duration": timeSelected + " min"
-   
+    "cycle duration": timeSelected,
+    "date": date
   }
 
-sessionUsage.push(cycle);
-localStorage.setItem("session", JSON.stringify(sessionUsage));
+ sessionUsage.push(cycle);
+
+// Put the object into storage
+  localStorage.setItem("session", JSON.stringify(sessionUsage));
+  console.log(1)
+
+  $(this).html('<i class="material-icons">pause</i>');
+ 
+
+}
+else if(!pause){
+  //this means the timer is going, but not pause yet so we need to, 
+  //and change the pause image to play
+  //pause = true
+  console.log(2)
+  pause = true;
+  console.log(lastPlayedDuration)
+  //set pause image
+  $(this).html('<i class="material-icons">play_arrow</i>');
 
 
-//}
+  
+  lastKey = "play_arrow"
+}
+else{
+//this case is unpause, it will only be called if pause = true
+//all we need is to set pause = false
+//change image back to the number
+console.log(3)
+pause = false;
+$(this).html('<i class="material-icons">pause</i>');
+
+}
+
+if(durations.hasOwnProperty(key)){
+  lastPlayedContext = this;
+  lastPlayedDuration = key
+}
+
 
 });
 

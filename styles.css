@@ -8,13 +8,21 @@ p {
     margin: 0px;
 }
 
+#logout {
+    right: 20px;
+    font-size: 24px;
+    text-decoration: underline;
+    text-align: right;
+}
+
 #footer {
+    margin-top: 80px;
     position: relative;
     bottom: 0;
     width: 100%;
     font-size: 30px;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
 }
 
 .container {
@@ -22,8 +30,8 @@ p {
     grid-gap: 0px;
     grid-template-rows: 8fr 1fr 1fr 3fr;
     grid-template-columns: 13fr 2fr 1fr 5fr;
-    height: 500px;
-    width: 800px;
+    height: 400px;
+    width: 700px;
     max-width: 100%;
     position: relative;
     top: 0;
@@ -32,7 +40,43 @@ p {
     right: 0;
     margin: auto;
     margin-top: 40px;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
+    background-color: aliceblue;
+}
+
+#playButtons {
+    width: 140px;
+    opacity: 0.8;
+}
+
+.pause {
+    /* visibility: hidden; */
+}
+
+.toolbar {
+    visibility: hidden;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.bottom-toolbar {
+    visibility: hidden;
+    margin-right: 14px;
+    opacity: 0.7;
+}
+
+#taskLabel {
+    margin-right: 8px;
+}
+
+#fname {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+    width: 200px;
+    font-size: 24px;
+    font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .break {
@@ -71,7 +115,6 @@ h1 {
 div.item {
     position: relative;
     color: #000;
-    padding: 20px;
 }
 
 div.item:hover {
@@ -89,7 +132,6 @@ a.divLink {
     text-decoration: none;
     z-index: 10;
     /* raises anchor tag above everything else in div */
-    background-color: aliceblue;
     background-size: cover;
     opacity: 6;
     /*workaround to make clickable in IE */
@@ -102,12 +144,38 @@ a.divLink {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 26px;
 }
 
 .item {
-    background-color: #ddd;
+    /* background-color: #ddd; */
     border: 1px solid #ccc;
+    font-size: 22px;
+}
+
+#timer {
+    margin-right: 120px;
+}
+
+.material-icons {
+    cursor: pointer;
+    text-decoration: none;
+    color: lightslategrey;
+    z-index: 10;
+    font-size: 24px !important;
+    /* font-size: 60px !important; */
+    /* raises anchor tag above everything else in div */
+    opacity: 0.5;
+    /*workaround to make clickable in IE */
+    /*workaround to make clickable in IE */
+    filter: alpha(opacity=0);
+    /*workaround to make clickable in IE */
+}
+
+.noclick {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
 }
 
 .box13 {

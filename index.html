@@ -5,13 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
     <title>Spiral</title>
+
 </head>
 
 <body>
 
-    <div class="center text-center">
+    <div id="logout">
+        <p> <a href="./dashboard.html">Dashboard</a> | Log Out</p>
+
+
+
+    </div>
+
+    <div class="center text-center title">
         <h2>Spiral</h2>
     </div>
 
@@ -22,30 +32,56 @@
             task to break ratio: <br> 55 min / 8 min <br> 21 min / 5 min
             <br> 13 min / 3 min <br> 8 min / 2 min <br> 5 min / 1 min <br> 3 min / 30 sec
 
-
         </div>
 
 
     </div>
     <div class="center">
-        <p id="timer">00:00
-            <p></p>
+        <div class="toolbar">
+
+            <i class="material-icons bottom-toolbar stop">stop</i>
+            <i class="material-icons bottom-toolbar skip_next">skip_next</i>
+
+            <i class="material-icons pause">pause_presentation</i>
+            <!-- <i class="material-icons play">play_circle_outline</i> -->
+        </div>
+
+        <div id="timer">00:00</div>
+
+
     </div>
+
+
+
+
 
     <div class="container">
 
-        <div class="item box13"><a class="divLink center">55</a></div>
+        <div class="item center box13"><a class="divLink center">55</a></div>
         <div class="item center box8"><a class="divLink center">21</a></div>
         <div class="item center box5"><a class="divLink center">13</a></div>
         <div class="item center box3"><a class="divLink center">8</a></div>
         <div class="item center box2"><a class="divLink center">5</a></div>
         <div class="item center box1"><a class="divLink center">3</a></div>
-        <div class="item center box1">
+        <div class="item center box1 noclick">
             <a class="divLink center"></a>
         </div>
 
 
     </div>
+
+
+
+
+    <div class="center" id="task">
+        <label id="taskLabel" for="fname">Task:  </label>
+        <input type="text" id="fname" name="fname">
+    </div>
+    <br>
+
+    <!-- <div class="center">
+        <img id="playButtons" src="playbuttons.png" alt="">
+    </div> -->
 
     <div id="footer">
         <div id="def2">
@@ -55,8 +91,6 @@
             <br> <br> Helps you become more efficient at knowing how long something will actually take.
             <br> <br> Reinforces the same conditioning triggers on every cycle (with start, break, and resume sounds) so you learn to enter and stay in your flow state.
             <br> <br> Easy to operate - keep it open in a browser window while studying or doing computer work and it takes one click to begin a cycle.
-
-
         </div>
         <p class="break2">Productivity Benefits of Using Spiral</p>
         <br>
