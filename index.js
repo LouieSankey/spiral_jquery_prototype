@@ -132,6 +132,11 @@ timeleft = 60 + 100000
 timer()
 }
 
+$(".toolbar").on('click', '.skip_next', function(elem){
+timeleft = 0
+$('.pause').click()
+})
+
 
 $(".toolbar").on('click', '.pause', function(elem){
   if(pause){
@@ -168,7 +173,12 @@ stop()
 
   breakDuration = durations[timeSelected] * 60;
 
-  let task = $('#fname').val();
+  let note = $('#fname').val().split(":");
+
+  let task = note[1]
+  let category = note[0]
+
+
 
   let date = new Date()
 
@@ -186,12 +196,15 @@ stop()
   }
 
   let cycle = {
+    "category": category,
     "task": task,
+    "cycle": timeSelected + " min",
+    "skipped": "n/a",
     "date": _date,
     "start time": time,
-    "end time": "n/a",
-    "skipped": "n/a",
-    "cycle duration": timeSelected + " min"
+    "end time": "n/a"
+    
+   
    
   }
 

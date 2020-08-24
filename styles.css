@@ -1,6 +1,8 @@
 body {
     background-size: cover;
     font-family: 'Open Sans Condensed', sans-serif;
+    /* background-color: black;
+    color: white; */
 }
 
 h2,
@@ -42,6 +44,11 @@ p {
     margin-top: 40px;
     margin-bottom: 60px;
     background-color: aliceblue;
+    /* background-image: url('./gr.jpeg');
+    background-size: 700px 400px;
+    background-repeat: no-repeat; */
+    /* opacity: 0.5;
+    background-color: black; */
 }
 
 #playButtons {
@@ -104,6 +111,13 @@ p {
     z-index: 1000
 }
 
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 0.4;
+    /* Firefox */
+}
+
 .text-center {
     text-align: center;
 }
@@ -133,7 +147,7 @@ a.divLink {
     z-index: 10;
     /* raises anchor tag above everything else in div */
     background-size: cover;
-    opacity: 6;
+    color: black;
     /*workaround to make clickable in IE */
     /*workaround to make clickable in IE */
     filter: alpha(opacity=0);
