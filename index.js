@@ -1,11 +1,13 @@
 
 let durations = {
+  76: 13,
   55: 8,
   21: 5,
   13: 3,
   8: 2,
   5: 1,
-  3: 0.5
+  3: 0.5,
+  2: 0
 
 }
 
@@ -18,7 +20,6 @@ if(!usageFromStorage){
 }else{
   sessionUsage = JSON.parse(usageFromStorage);
 }
-
 
 console.log(sessionUsage)
 
@@ -111,6 +112,30 @@ function fancyTimeFormat(duration)
 
 
 let pause = false;
+
+let smallSet = [21,13,8,5,3,2]
+let mediumSet = [55,21,13,8,5,3]
+let largeSet = [76,55,21,13,8,5]
+
+let set = [smallSet, largeSet, mediumSet]
+let setCount = 0;
+//cycle through three different number sets
+$(".cycle").on('click', function(){
+
+  let i = 0;
+  $('.container').children('div').each(function () {
+
+    $(this).text(set[setCount][i])
+    i++
+});
+if(setCount === 2){
+  setCount = 0;
+}else{
+  setCount++
+}
+
+
+})
 
 $(".toolbar").on('click', '.stop', function(elem){
 

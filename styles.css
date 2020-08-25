@@ -161,10 +161,19 @@ a.divLink {
     font-size: 26px;
 }
 
+.cycle {
+    position: relative;
+    border: 1px solid #ccc;
+    font-size: 22px;
+    cursor: hand;
+    cursor: pointer;
+    opacity: .9;
+}
+
 .item {
     /* background-color: #ddd; */
     border: 1px solid #ccc;
-    font-size: 22px;
+    /* font-size: 22px; */
 }
 
 #timer {
@@ -184,12 +193,6 @@ a.divLink {
     /*workaround to make clickable in IE */
     filter: alpha(opacity=0);
     /*workaround to make clickable in IE */
-}
-
-.noclick {
-    pointer-events: none;
-    cursor: default;
-    text-decoration: none;
 }
 
 .box13 {
