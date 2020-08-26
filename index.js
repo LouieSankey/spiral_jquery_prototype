@@ -1,6 +1,6 @@
 
 let durations = {
-  76: 21,
+  89: 21,
   55: 13,
   34: 8,
   21: 5,
@@ -117,7 +117,7 @@ let pause = false;
 let smallSet = [21,13,8,5,3,1]
 let mediumSet = [34,21,13,8,5,3]
 let mediumLargeSet = [55,34,21,13,8,5]
-let largeSet = [76,55,34, 21,13,8]
+let largeSet = [89,55,34, 21,13,8]
 
 
 let set = [mediumSet, smallSet,  largeSet, mediumLargeSet]
