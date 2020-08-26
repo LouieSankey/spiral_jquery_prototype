@@ -1,7 +1,8 @@
 
 let durations = {
-  76: 13,
-  55: 8,
+  76: 21,
+  55: 13,
+  34: 8,
   21: 5,
   13: 3,
   8: 2,
@@ -113,22 +114,23 @@ function fancyTimeFormat(duration)
 
 let pause = false;
 
-let smallSet = [21,13,8,5,3,2]
-let mediumSet = [55,21,13,8,5,3]
-let largeSet = [76,55,21,13,8,5]
+let smallSet = [21,13,8,5,3,1]
+let mediumSet = [34,21,13,8,5,3]
+let mediumLargeSet = [55,34,21,13,8,5]
+let largeSet = [76,55,34, 21,13,8]
 
-let set = [smallSet, largeSet, mediumSet]
+
+let set = [mediumSet, smallSet,  largeSet, mediumLargeSet]
 let setCount = 0;
 //cycle through three different number sets
 $(".cycle").on('click', function(){
 
   let i = 0;
   $('.container').children('div').each(function () {
-
     $(this).text(set[setCount][i])
     i++
 });
-if(setCount === 2){
+if(setCount === 3){
   setCount = 0;
 }else{
   setCount++
