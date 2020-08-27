@@ -114,7 +114,7 @@ function fancyTimeFormat(duration)
 
 let pause = false;
 
-let smallSet = [21,13,8,5,3,1]
+let smallSet = [21,13,8,5,3,2]
 let mediumSet = [34,21,13,8,5,3]
 let mediumLargeSet = [55,34,21,13,8,5]
 let largeSet = [89,55,34, 21,13,8]
