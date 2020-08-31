@@ -2,30 +2,92 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" type="text/css" href="dashboard.css">
     <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
-    <title>Dashboard</title>
+
+    <title>Spiral Dashboard</title>
+
+    <script>
+        window.Promise ||
+            document.write(
+                '<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"><\/script>'
+            )
+        window.Promise ||
+            document.write(
+                '<script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20171210/classList.min.js"><\/script>'
+            )
+        window.Promise ||
+            document.write(
+                '<script src="https://cdn.jsdelivr.net/npm/findindex_polyfill_mdn"><\/script>'
+            )
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
 </head>
 
 <body>
-    <h1 class="center">Dashboard</h1>
+    <h1 class="center">Spiral Dashboard</h1>
+    <div class="flex-container">
 
+        <div class="flex-child magenta">
+
+            <h4 id="task_name">This Week: </h4>
+            <h3 id="total_time_indicator">Focus Time: 6h:45m</h3>
+
+
+
+            <select id="selectbox1">
+                <option value="Day">Day</option>
+                <option value="Week">Week</option>
+                <option value="Month">Month</option>
+                <option value="Year">Year</option>
+            </select>
+            <select id="selectbox2">
+                <option value="category">Category</option>
+                <option value="task">Task</option>
+            </select>
+
+            <button id="displayButton">Display</button>
+            <h4 id="select_slice">Select a Slice:</h4>
+            <div id="pieChart"></div>
+
+
+
+
+        </div>
+
+        <div class="flex-child green">
+            <h4 id="barChartHeader">Total</h4>
+            <div id="barChart"></div>
+
+
+
+
+        </div>
+
+    </div>
+
+    </div>
+
+
+
+    <h3>Raw Data</h3>
     <table class="paleBlueRows"></table>
-
-
-
-</body>
-<footer>
-
-
+    <!-- <h4>Break Time: 1h:22m</h4> -->
     <p class="reset">Reset Data</p>
-</footer>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="./dashboard.js"></script>
+</body>
 
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="./dashboard.js"></script>
 
 </html>

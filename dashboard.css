@@ -1,7 +1,7 @@
 table.paleBlueRows {
     font-family: "Times New Roman", Times, serif;
     border: 1px solid #FFFFFF;
-    width: 80%;
+    width: 100%;
     height: 50%;
     border-collapse: collapse;
     margin: auto;
@@ -22,7 +22,7 @@ table.paleBlueRows tr:nth-child(even) {
 }
 
 table.paleBlueRows thead {
-    background: #0b6ea450;
+    background: #53A6FC;
     border-bottom: 5px solid #FFFFFF;
 }
 
@@ -41,9 +41,9 @@ table.paleBlueRows thead th:first-child {
 table.paleBlueRows tfoot {
     font-size: 14px;
     font-weight: bold;
-    color: #333333;
-    background: #D0E4F5;
-    border-top: 3px solid #444444;
+    color: #53A6FC;
+    background: #53A6FC;
+    border-top: 3px solid #53A6FC;
 }
 
 table.paleBlueRows tfoot td {
@@ -56,4 +56,107 @@ table.paleBlueRows tfoot td {
 
 .center {
     text-align: center;
+}
+
+#pieChart {
+    padding: 0;
+    /* max-width: 380px; */
+    /* min-width: 350px; */
+    width: 380px;
+    margin: 35px;
+    margin-top: -35px;
+}
+
+#barChart {
+    max-width: 100%;
+    min-width: 350px;
+}
+
+#barChartHeader {
+    margin-top: 100px;
+}
+
+
+/* dashboard code  */
+
+.s-hidden {
+    visibility: hidden;
+    padding-right: 10px;
+}
+
+.select {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    font: normal 11px/22px Arial, Sans-Serif;
+    color: black;
+    border: 1px solid #ccc;
+}
+
+.styledSelect {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+.styledSelect:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-color: black transparent transparent transparent;
+    position: absolute;
+    top: 9px;
+    right: 6px;
+}
+
+.styledSelect:active,
+.styledSelect.active {
+    background-color: #eee;
+}
+
+.options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    margin: 0 0;
+    padding: 0 0;
+    list-style: none;
+    border: 1px solid #ccc;
+    background-color: white;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.options li {
+    padding: 0 6px;
+    margin: 0 0;
+    padding: 0 10px;
+}
+
+.options li:hover {
+    background-color: #39f;
+    color: white;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+    /* max-width: 500px; */
+}
+
+.flex-child:first-child {
+    /* margin-right: 20px; */
 }

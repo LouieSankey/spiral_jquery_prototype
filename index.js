@@ -200,10 +200,22 @@ stop()
 
   breakDuration = durations[timeSelected] * 60;
 
-  let note = $('#fname').val().split(":");
+console.log("value + " + $('#fname').val())
 
-  let task = note[1]
-  let category = note[0]
+  let task, category;
+
+
+if($('#fname').val() === ""){
+  task = "no task name"
+  category = "uncategorized"
+}else{
+  let note = $('#fname').val().split(":");
+  task = note[1]
+  category = note[0]
+ 
+}
+
+
 
 
 
@@ -226,13 +238,9 @@ stop()
     "category": category,
     "task": task,
     "cycle": timeSelected + " min",
-    "skipped": "n/a",
     "date": _date,
-    "start time": time,
-    "end time": "n/a"
-    
-   
-   
+    "start time": time
+
   }
 
 sessionUsage.push(cycle);
