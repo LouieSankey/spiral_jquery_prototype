@@ -276,8 +276,10 @@ var areaChartOptions = {
   },
 },
 
+
+
 dataLabels: {
-  enabled: false
+  enabled: true
   //position: 'top', // top, center, bottom
 },
 stroke: {

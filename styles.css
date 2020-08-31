@@ -5,6 +5,10 @@ body {
     color: white; */
 }
 
+#spiral_image {
+    opacity: 0.4;
+}
+
 h2,
 p {
     margin: 0px;

@@ -1,3 +1,11 @@
+body {
+    font-family: 'Open Sans Condensed', sans-serif;
+    /* background-color: black;
+    
+    color: white; */
+    font-size: 20px;
+}
+
 table.paleBlueRows {
     font-family: "Times New Roman", Times, serif;
     border: 1px solid #FFFFFF;
@@ -73,7 +81,7 @@ table.paleBlueRows tfoot td {
 }
 
 #barChartHeader {
-    margin-top: 100px;
+    margin-top: 130px;
 }
 
 
