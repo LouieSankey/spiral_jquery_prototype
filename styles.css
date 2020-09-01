@@ -80,12 +80,16 @@ p {
     margin-right: 8px;
 }
 
+#task {
+    margin-bottom: 100px;
+}
+
 #fname {
     border: 0;
     outline: 0;
     background: transparent;
     border-bottom: 1px solid black;
-    width: 200px;
+    width: 300px;
     font-size: 24px;
     font-family: 'Open Sans Condensed', sans-serif;
 }
@@ -103,7 +107,7 @@ p {
     border-style: solid;
     position: absolute;
     background-color: snow;
-    top: 20%;
+    top: 30%;
     right: 5%;
     z-index: 1000
 }
@@ -224,4 +228,13 @@ a.divLink {
 .box2 {
     grid-row: 2 / 4;
     grid-column: 2 / 3;
+}
+
+.box_color:hover {
+    background: rgb(224, 238, 250);
+}
+
+.small_text {
+    margin-top: 10px;
+    font-size: 18px;
 }

@@ -15,7 +15,7 @@
 <body>
 
     <div id="logout">
-        <p> <a href="./dashboard.html">Dashboard</a> | Log Out</p>
+        <p> <a href="./dashboard.html">Time Tracking</a> | Log Out</p>
 
 
 
@@ -26,10 +26,10 @@
     </div>
 
     <div class="center text-center">
-        <p>Estimate your attention span for the task you're working on (in minutes), then be rewarded with <span class="break">a break.</span>
+        <p>Estimate the duration of a task or subtask your working on (in minutes), then be rewarded with <span class="break">a break.</span>
             <br><span id="subheading">(a bell begins a break and a dog bark ends one)</span></p>
         <div id="def">
-            task to break ratio: <br> 55 min / 8 min <br> 21 min / 5 min
+            task to break ratio: <br> 55 min / 13 min<br> 34 min / 8 min <br> 21 min / 5 min
             <br> 13 min / 3 min <br> 8 min / 2 min <br> 5 min / 1 min <br> 3 min / 30 sec
 
         </div>
@@ -57,15 +57,15 @@
 
     <div class="container">
 
-        <div class="item center box13"><a class="divLink center">55</a></div>
-        <div class="item center box8"><a class="divLink center">34</a></div>
-        <div class="item center box5"><a class="divLink center">21</a></div>
-        <div class="item center box3"><a class="divLink center">13</a></div>
-        <div class="item center box2"><a class="divLink center">8</a></div>
-        <div class="item center box1"><a class="divLink center">5</a></div>
-        <div class="cycle center box1">
+        <div class="item center box_color box13"><a class="divLink center">55</a></div>
+        <div class="item center box_color box8"><a class="divLink center">34</a></div>
+        <div class="item center box_color box5"><a class="divLink center">21</a></div>
+        <div class="item center box_color box3"><a class="divLink center">13</a></div>
+        <div class="item center box_color box2"><a class="divLink center">8</a></div>
+        <div class="item center box_color box1"><a class="divLink center">5</a></div>
+        <div class="cycle center box_color box1">
             <a class="divLink center">
-                <img id="spiral_image" src="./spiral_icon.jpg" width="18px" alt="">
+                <img id="spiral_image" src="./plus_minus.png" width="14px" alt="">
             </a>
         </div>
 
@@ -73,42 +73,35 @@
     </div>
 
 
+    <form class="center" method="get" id="task">
+        <label id="taskLabel" for="fname"> Leave a Task Inserted for Time Tracking:  <br></label>
+        <input type="text" id="fname" value="" placeholder="Category : Task " name="fname">
 
-
-    <div class="center" id="task">
-        <label id="taskLabel" for="fname">Task:  </label>
-        <input type="text" id="fname" value="" placeholder="Category : Task" name="fname">
-    </div>
-    <br>
-
-    <!-- <div class="center">
-        <img id="playButtons" src="playbuttons.png" alt="">
-    </div> -->
+    </form>
 
     <div id="footer">
         <div id="def2">
-            Improves meta-cognition (thinking about the task you want to accomplish before doing it).
+
+            Imaging holding two rocks, one weighs one pound and the other weighs two pounds. It isn’t too hard to tell which of these two rocks is heavier.
+            <br> <br> But imagine holding a twenty pound rock and a twenty one pound rock. The task of discerning the difference becomes much harder.
+            <br> <br> And the same applies to the time it takes to complete a task.
+            <br> <br> In the context of a small task, giving yourself an extra five minutes is substantial.
+            <br> <br> But with a larger task, the same five minute difference becomes less consequential and harder to account for. (Think fifty-five minutes vs an hour, for example.)
+            <br> <br> Spiral solves this using The Golden Ratio, which provides a proportional framework where smaller estimates are closer together and larger estimates are spaced farther apart.
+            <br> <br> This makes it ideally suited for quickly giving yourself a timeframe for a task or substask before getting started.
+            <br> <br>
+            <p class="underline">Productivity Benefits</p>
+            <br> Improves meta-cognition (thinking about the task you want to accomplish before doing it).
             <br> <br> Charts your time spent in focus, vs break.
             <br> <br> Adds a time factor that encourages you to move through tasks more quickly, but without imposing ridged timeframes (that can cause stress).
             <br> <br> Helps you become more efficient at knowing how long tasks will take.
             <br> <br> Easy to operate - keep it open in a browser window while studying or doing computer work and it takes one click to begin a cycle.
             <br> <br>
-            <p class="underline">How does Spiral work? </p>
-            <br> Imaging holding two rocks, one weighs one pound and the other weighs two pounds. It isn’t too hard to tell which of these two rocks is heavier.
-            <br> <br> But imagine holding a twenty pound rock and a twenty one pound rock. The task of discerning the difference becomes much harder.
-            <br> <br> And the same applies to the time it takes to complete a task.
-            <br> <br> For a small task, it’s easy to tell whether it’s more likely to take five minutes or ten minutes.
-            <br> <br> But with a larger task, the same five minute difference becomes less consequential and harder to account for. (Think forty-five minutes vs fifty minutes, for example.)
-            <br> <br> Spiral solves this by providing a proportional framework where smaller estimates are closer together and larger estimates are spaced farther apart.
-            <br> <br> This makes it ideally suited for quickly sizing up a task before beginning, or deciding how to break a large task down into subtasks.
-            <br> <br> Simply estimate a timeframe for any task, and with one click Spiral helps you stay on track, and challenges you to move through it quickly and without distraction.
-
         </div>
-        <p class="break2">Productivity Benefits of Using Spiral</p>
+        <p class="break2">Why the Spiral Numbers?</p>
         <br>
 
     </div>
-
 </body>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

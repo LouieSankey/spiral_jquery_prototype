@@ -1,4 +1,6 @@
 
+ $( document ).ready(function() {
+
 let durations = {
   89: 21,
   55: 13,
@@ -124,6 +126,7 @@ let set = [mediumSet, smallSet,  largeSet, mediumLargeSet]
 let setCount = 0;
 //cycle through three different number sets
 $(".cycle").on('click', function(){
+  
 
   let i = 0;
   $('.container').children('div').each(function () {
@@ -188,6 +191,7 @@ console.log(onBreak)
 
 stop()
 
+setFocus()
 
 
   var gong = new Audio("opening_gong.wav"); 
@@ -204,15 +208,18 @@ console.log("value + " + $('#fname').val())
 
   let task, category;
 
+  let note = $('#fname').val().split(":");
 
 if($('#fname').val() === ""){
-  task = "no task name"
   category = "uncategorized"
 }else{
-  let note = $('#fname').val().split(":");
-  task = note[1]
   category = note[0]
- 
+}
+
+if(!note[1]){
+  task = "no task name"
+}else{
+  task = note[1]
 }
 
 
@@ -277,5 +284,22 @@ $('.break2').on("mouseenter", function () {
   });
 
 
+ 
+    function setFocus () {
+
+      console.log("set focus")
+      var input = document.getElementById ("fname");
+      var scroll = $(window).scrollTop();
+      input.focus ();
+      input.select();
+      $(window).scrollTop(scroll);
+      }
+
+      setFocus()
+
+    
+    
+
+  })
 
  
