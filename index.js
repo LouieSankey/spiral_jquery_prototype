@@ -58,6 +58,7 @@ downloadTimer = setInterval(function(){
       document.getElementById("timer").innerHTML = "Select a Duration";
 
     }else{
+      updateDbWithTask()
       var bling = new Audio("endbell.mp3"); 
       bling.play();
       timeleft = breakDuration
@@ -144,11 +145,11 @@ if(setCount === 3){
 
 $(".toolbar").on('click', '.stop', function(elem){
 
-stop()
+stopTimer()
 
 })
 
-function stop(){
+function stopTimer(){
   clearInterval(downloadTimer);
   $('.stop').css('visibility','hidden');
   $('.skip_next').css('visibility','hidden');
@@ -183,28 +184,33 @@ $(".toolbar").on('click', '.pause', function(elem){
   }
 })
 
+let timeSelected;
+
 $(".container").on('click', '.item', function(elem) {
-console.log(pause)
-console.log(breakDuration)
-console.log(timeleft)
-console.log(onBreak)
 
-stop()
-
-setFocus()
-
+stopTimer()
+setTaskInputFocus()
 
   var gong = new Audio("opening_gong.wav"); 
   gong.play();
 
-  let timeSelected = parseInt($(this).text())
+  timeSelected = parseInt($(this).text())
   onBreak = false;
   isPastBreak = false;
 
-
   breakDuration = durations[timeSelected] * 60;
 
-console.log("value + " + $('#fname').val())
+  if(timeleft > 0){
+    timeleft = timeSelected * 60;
+  }else{
+    timeleft = timeSelected * 60;
+    timer()
+  }
+
+
+});
+
+function updateDbWithTask(){
 
   let task, category;
 
@@ -222,24 +228,11 @@ if(!note[1]){
   task = note[1]
 }
 
-
-
-
-
   let date = new Date()
 
   var d = new Date(); 
   var _date = d.toLocaleDateString();
   var time = d.toLocaleTimeString();
-
-
-
-  if(timeleft > 0){
-    timeleft = timeSelected * 60;
-  }else{
-    timeleft = timeSelected * 60;
-    timer()
-  }
 
   let cycle = {
     "category": category,
@@ -250,13 +243,14 @@ if(!note[1]){
 
   }
 
+
+  
 sessionUsage.push(cycle);
 localStorage.setItem("session", JSON.stringify(sessionUsage));
+}
 
 
-//}
 
-});
 
 $("#def").hide();
 
@@ -285,7 +279,7 @@ $('.break2').on("mouseenter", function () {
 
 
  
-    function setFocus () {
+    function setTaskInputFocus () {
 
       console.log("set focus")
       var input = document.getElementById ("fname");
@@ -295,11 +289,7 @@ $('.break2').on("mouseenter", function () {
       $(window).scrollTop(scroll);
       }
 
-      setFocus()
-
-    
-    
-
+      setTaskInputFocus()
   })
 
  
