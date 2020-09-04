@@ -48,10 +48,9 @@ p {
     margin-top: 40px;
     margin-bottom: 60px;
     background-color: aliceblue;
-    /* background-image: url('./gr.jpeg');
+    /* background-image: url('./chalkboard2.png');
     background-size: 700px 400px;
-    background-repeat: no-repeat; */
-    /* opacity: 0.5;
+    background-repeat: no-repeat;
     background-color: black; */
 }
 
@@ -137,6 +136,9 @@ h1 {
 div.item {
     position: relative;
     color: #000;
+    /* background-image: url('./copper.jpeg');
+    background-repeat: no-repeat;
+    background-size: contain; */
 }
 
 div.item:hover {
@@ -155,7 +157,7 @@ a.divLink {
     z-index: 10;
     /* raises anchor tag above everything else in div */
     background-size: cover;
-    color: black;
+    /* color: white; */
     /*workaround to make clickable in IE */
     /*workaround to make clickable in IE */
     filter: alpha(opacity=0);

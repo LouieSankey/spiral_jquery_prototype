@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="dashboard.css">
     <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
 
-    <title>Time Tracking</title>
+    <title>Dashboard</title>
 
     <script>
         window.Promise ||
@@ -31,42 +31,37 @@
 </head>
 
 <body>
-    <h1 class="center">Time Tracking</h1>
+    <h1 class="center">Dashboard</h1>
     <div class="flex-container">
 
         <div class="flex-child magenta">
 
-            <h4 id="task_name">This Week: </h4>
-            <h3 id="total_time_indicator">Focus Time: 6h:45m</h3>
-
-
-
             <select id="selectbox1">
                 <option value="Day">Day</option>
                 <option value="Week">Week</option>
-                <option value="Month">Month</option>
-                <option value="Year">Year</option>
+       
             </select>
             <select id="selectbox2">
                 <option value="category">Category</option>
                 <option value="task">Task</option>
             </select>
 
-            <button id="displayButton">Display</button>
+            <button id="displayButton">Filter</button>
             <h4 id="select_slice">Select a Slice:</h4>
             <div id="pieChart"></div>
-
-
 
 
         </div>
 
         <div class="flex-child green">
-            <h4 id="barChartHeader">Total</h4>
+
+            <div class="inline">
+
+                <span id="barChartHeader">Total  </span>
+                <span id="total_time_indicator"></span>
+
+            </div>
             <div id="barChart"></div>
-
-
-
 
         </div>
 

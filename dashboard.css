@@ -80,6 +80,10 @@ table.paleBlueRows tfoot td {
     min-width: 350px;
 }
 
+.inline {
+    display: inline;
+}
+
 #barChartHeader {
     margin-top: 130px;
 }

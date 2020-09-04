@@ -146,7 +146,7 @@ function sortForAreaChart(taskName){
       })
 
       let formattedTime = parseInt(totalTime/60) + "h:" + (totalTime % 60) + "m"
-     $("#total_time_indicator").text("Focus Time: " + formattedTime)
+     $("#total_time_indicator").text("- Focus Time: " + formattedTime)
      
 
   renderAreaChart(xyData)
@@ -192,7 +192,7 @@ var options = {
       width: '100%',
 //line, area, bar, radar, histogram, pie, donut, radialBar, scatter, bubble, heatmap, candlestick
 
-      type: 'donut',
+      type: 'pie',
       events: {
           dataPointSelection: function(event, chartContext, config) {
 
@@ -212,7 +212,7 @@ var options = {
   labels: valuesArray,
   theme: {
       monochrome: {
-          enabled: true
+          enabled: false
       }
   },
   plotOptions: {
