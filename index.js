@@ -212,21 +212,16 @@ setTaskInputFocus()
 
 function updateDbWithTask(){
 
-  let task;
 
+  let task;
   let note = $('#fname').val()
 
 if($('#fname').val() === ""){
   task = "uncategorized"
 }else{
-  task = note[0]
+  task = note
 }
 
-if(!note[1]){
-  task = "no task name"
-}else{
-  task = note[1]
-}
 
   let date = new Date()
 

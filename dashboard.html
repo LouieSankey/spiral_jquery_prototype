@@ -36,18 +36,8 @@
 
         <div class="flex-child magenta">
 
-            <select id="selectbox1">
-                <option value="Day">Day</option>
-                <option value="Week">Week</option>
-       
-            </select>
-            <select id="selectbox2">
-                <option value="category">Category</option>
-                <option value="task">Task</option>
-            </select>
 
-            <button id="displayButton">Filter</button>
-            <h4 id="select_slice">Select a Slice:</h4>
+            <h4 id="select_slice">Select a Task:</h4>
             <div id="pieChart"></div>
 
 
@@ -71,7 +61,17 @@
 
 
 
-    <h3>Raw Data</h3>
+    <select id="selectbox1">
+        <option value="Day">Day</option>
+        <option value="Week">Week</option>
+
+    </select>
+    <!-- <select id="selectbox2">
+        <option value="category">Category</option>
+        <option value="task">Task</option>
+    </select> -->
+
+    <button id="displayButton">Filter</button>
     <table class="paleBlueRows"></table>
     <!-- <h4>Break Time: 1h:22m</h4> -->
     <p class="reset">Reset Data</p>

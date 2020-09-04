@@ -51,7 +51,7 @@ allUsageData = allUsageData.reverse()
 
 
 //reverse the data so newer is on top
-allUsageData.sort((a, b) => a.category.localeCompare(b.category))
+allUsageData.sort((a, b) => a.task.localeCompare(b.task))
 
 
 let categoryValuesObj = {};
@@ -73,9 +73,9 @@ function getTimeType(){
 
 $('#displayButton').on("click", function(){
 
-  let categoryOrTask = $("#selectbox2 option:selected").val()
+  //let categoryOrTask = $("#selectbox2 option:selected").val()
 
-    sortForPieChart(categoryOrTask)
+    sortForPieChart("task")
     sortForAreaChart()
 
 })
@@ -121,13 +121,13 @@ function sortForAreaChart(taskName){
   
       if(taskName != null){
      
-        let categoryOrTask = $("#selectbox2 option:selected").val()
+        // let categoryOrTask = $("#selectbox2 option:selected").val()
 
-        console.log("catortas", categoryOrTask)
+ 
      
         usageData = usageData.filter(obj => {
         
-          return obj[categoryOrTask] === taskName;
+          return obj["task"] === taskName;
         })
     }
 
