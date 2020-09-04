@@ -30,7 +30,7 @@ table.paleBlueRows tr:nth-child(even) {
 }
 
 table.paleBlueRows thead {
-    background: #53A6FC;
+    background: rgb(146, 197, 251);
     border-bottom: 5px solid #FFFFFF;
 }
 

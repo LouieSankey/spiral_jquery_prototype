@@ -72,8 +72,6 @@ function getTimeType(){
 }
 
 $('#displayButton').on("click", function(){
-  
-
 
   let categoryOrTask = $("#selectbox2 option:selected").val()
 

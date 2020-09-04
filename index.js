@@ -31,7 +31,7 @@ let onBreak = false;
 let breakDuration = 0;
 let isPastBreak = false;
 
-document.getElementById("timer").innerHTML = "Select a Duration"
+document.getElementById("timer").innerHTML = ""
 
 //a hack to wake up the sound audio on the browser 
 // var silence = new Audio("silence.wav");
@@ -54,8 +54,8 @@ downloadTimer = setInterval(function(){
       isPastBreak = true;
       var bark = new Audio("dog_bark.wav"); 
       bark.play();
-
-      document.getElementById("timer").innerHTML = "Select a Duration";
+      $('.toolbar').css('visibility','hidden');
+      document.getElementById("timer").innerHTML = "";
 
     }else{
       updateDbWithTask()
@@ -69,7 +69,7 @@ downloadTimer = setInterval(function(){
   } else {
 
     if(timeleft > 60 * 100){
-      document.getElementById("timer").innerHTML = "Select a Duration";
+      document.getElementById("timer").innerHTML = "";
     } else if(isPastBreak){
       document.getElementById("timer").innerHTML = "Finished";
       $('.toolbar').css('visibility','hidden');
@@ -156,7 +156,7 @@ function stopTimer(){
 
   $('.toolbar').css('visibility','hidden');
   $('.pause').text('pause_presentation')
-document.getElementById("timer").innerHTML = "Select a Duration";
+document.getElementById("timer").innerHTML = "";
 pause = false;
 breakDuration = 0;
 timeleft = 60 + 100000
@@ -212,14 +212,14 @@ setTaskInputFocus()
 
 function updateDbWithTask(){
 
-  let task, category;
+  let task;
 
-  let note = $('#fname').val().split(":");
+  let note = $('#fname').val()
 
 if($('#fname').val() === ""){
-  category = "uncategorized"
+  task = "uncategorized"
 }else{
-  category = note[0]
+  task = note[0]
 }
 
 if(!note[1]){
@@ -235,7 +235,6 @@ if(!note[1]){
   var time = d.toLocaleTimeString();
 
   let cycle = {
-    "category": category,
     "task": task,
     "cycle": timeSelected + " min",
     "date": _date,
