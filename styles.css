@@ -45,7 +45,7 @@ p {
     left: 0;
     right: 0;
     margin: auto;
-    margin-top: 40px;
+    margin-top: 100px;
     margin-bottom: 60px;
     background-color: aliceblue;
     /* background-image: url('./chalkboard2.png');
@@ -64,7 +64,6 @@ p {
 }
 
 .toolbar {
-    visibility: hidden;
     margin-right: 10px;
     margin-top: 10px;
 }
@@ -80,7 +79,10 @@ p {
 }
 
 #task {
-    margin-bottom: 100px;
+    margin-top: 0px;
+    margin-left: -60px;
+    margin-bottom: -14px;
+    visibility: hidden;
 }
 
 #fname {
@@ -91,6 +93,7 @@ p {
     width: 200px;
     font-size: 24px;
     font-family: 'Open Sans Condensed', sans-serif;
+    margin-top: -6px;
 }
 
 .break {
@@ -171,6 +174,10 @@ a.divLink {
     font-size: 24px;
 }
 
+.tool {
+    display: none;
+}
+
 .cycle {
     position: relative;
     border: 1px solid #ccc;
@@ -191,7 +198,8 @@ a.divLink {
 }
 
 #timer {
-    margin-right: 120px;
+    margin-left: 10px;
+    margin-right: 20px;
 }
 
 .material-icons {
@@ -199,7 +207,7 @@ a.divLink {
     text-decoration: none;
     color: lightslategrey;
     z-index: 10;
-    font-size: 24px !important;
+    font-size: 30px !important;
     /* font-size: 60px !important; */
     /* raises anchor tag above everything else in div */
     opacity: 0.5;

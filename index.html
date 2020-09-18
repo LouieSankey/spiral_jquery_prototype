@@ -36,18 +36,19 @@
 
 
     </div>
-    <div class="center">
-        <div class="toolbar">
+    <div class="center tool">
 
-            <i class="material-icons bottom-toolbar stop">stop</i>
-            <i class="material-icons bottom-toolbar skip_next">skip_next</i>
-
-            <i class="material-icons pause">pause_presentation</i>
-            <!-- <i class="material-icons play">play_circle_outline</i> -->
-        </div>
-
-        <div id="timer">00:00</div>
-
+        <form class="center" method="get" id="task">
+            <div class="toolbar">
+                <i class="material-icons bottom-toolbar stop">stop</i>
+                <i class="material-icons bottom-toolbar skip_next">skip_next</i>
+                <i class="material-icons pause">pause_presentation</i>
+                <!-- <i class="material-icons play">play_circle_outline</i> -->
+            </div>
+            <!-- <label id="taskLabel" for="fname"> Task:  <br></label> -->
+            <div id="timer">00:00</div>
+            <input class="toolbar" type="text" id="fname" value="" placeholder="what are you working on?" name="fname">
+        </form>
 
     </div>
 
@@ -73,11 +74,7 @@
     </div>
 
 
-    <form class="center" method="get" id="task">
-        <label id="taskLabel" for="fname"> Task:  <br></label>
-        <input type="text" id="fname" value="" placeholder="" name="fname">
 
-    </form>
 
     <div id="footer">
         <div id="def2">

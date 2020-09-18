@@ -54,7 +54,8 @@ downloadTimer = setInterval(function(){
       isPastBreak = true;
       var bark = new Audio("dog_bark.wav"); 
       bark.play();
-      $('.toolbar').css('visibility','hidden');
+      $('#task').css('visibility','hidden');
+      // $('.toolbar').css('visibility','hidden');
       document.getElementById("timer").innerHTML = "";
 
     }else{
@@ -72,14 +73,27 @@ downloadTimer = setInterval(function(){
       document.getElementById("timer").innerHTML = "";
     } else if(isPastBreak){
       document.getElementById("timer").innerHTML = "Finished";
-      $('.toolbar').css('visibility','hidden');
+      // $('.toolbar').css('visibility','hidden');
+      $('#task').css('visibility','hidden');
       $('.stop').css('visibility','hidden');
       $('.skip_next').css('visibility','hidden');
      
     }else{
       let periodIndicator = onBreak ? "On Break: " : "Remaining: "
-      $('.toolbar').css('visibility','visible');
+   
+      $('.tool').show()
       document.getElementById("timer").innerHTML = periodIndicator + fancyTimeFormat(timeleft);
+
+      setTimeout(() => {
+
+        $('#task').css('visibility','visible');
+
+      }, 50);
+  
+      $('#subheading').css('display','none');
+
+  
+
     }
     
 
@@ -153,8 +167,8 @@ function stopTimer(){
   clearInterval(downloadTimer);
   $('.stop').css('visibility','hidden');
   $('.skip_next').css('visibility','hidden');
-
-  $('.toolbar').css('visibility','hidden');
+  $('#task').css('visibility','hidden');
+  // $('.toolbar').css('visibility','hidden');
   $('.pause').text('pause_presentation')
 document.getElementById("timer").innerHTML = "";
 pause = false;
@@ -212,9 +226,9 @@ setTaskInputFocus()
 
 function updateDbWithTask(){
 
-
   let task;
   let note = $('#fname').val()
+
 
 if($('#fname').val() === ""){
   task = "uncategorized"
@@ -222,6 +236,8 @@ if($('#fname').val() === ""){
   task = note
 }
 
+
+console.log(task)
 
   let date = new Date()
 

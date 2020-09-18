@@ -41,9 +41,6 @@ $('select').each(function () {
 });
 
 
-
-
-
  
 let usageFromStorage = localStorage.getItem('session');
 let allUsageData = JSON.parse(usageFromStorage)
